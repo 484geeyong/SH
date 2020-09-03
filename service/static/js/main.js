@@ -591,52 +591,7 @@ function categoryChange2(e) {
     
 	//-----서울(구)박스
 	else if(e.value=='강남구'){
-        var ctx = document.getElementById("myChart");
-		var myChart = new Chart(ctx, {
-		type: 'bar',
-		data: {
-		labels: ["2020/02","2020/03","2020/04","2020/05","2020/06","2020/07","2020/08"],
-		datasets: [{
-		label: '코로나 확진자 추이',
-		data: [7,34,23,11,8,15,66],
-		backgroundColor: [
-			'rgba(255, 99, 132, 0.2)',
-			'rgba(54, 162, 235, 0.2)',
-			'rgba(255, 206, 86, 0.2)',
-			'rgba(75, 192, 192, 0.2)',
-			'rgba(153, 102, 255, 0.2)',
-			'rgba(255, 159, 64, 0.2)',
-			'rgba(255, 99, 132, 0.2)'
-		],
-		borderColor: [
-			'rgba(255,99,132,1)',
-			'rgba(54, 162, 235, 1)',
-			'rgba(255, 206, 86, 1)',
-			'rgba(75, 192, 192, 1)',
-			'rgba(153, 102, 255, 1)',
-			'rgba(255, 159, 64, 1)',
-			'rgba(255,99,132,1)'
-		],
-		borderWidth: 1
-		}]
-	},
-	options: {
-		responsive: false,
-		scales: {
-		xAxes: [{
-			ticks: {
-			maxRotation: 90,
-			minRotation: 80
-			}
-		}],
-		yAxes: [{
-			ticks: {
-			beginAtZero: true
-			}
-		}]
-		}
-	}
-	});
+
 		//document.getElementById("gangNam").style.display = "block";
         //document.getElementById("gangnam").scrollIntoView();
         
@@ -647,1187 +602,82 @@ function categoryChange2(e) {
             //"{% for clean in cleans %} {% if clean.0 == '강남구' %}<p>강남구 청정지수: {{clean.0}}{{clean.3}}</p>{% endif %}{% endfor %}";
        
         //document.getElementById("imagecheck").innerHTML += 
-            "<img src='/static/images/corona/level1.png' alt='1' style='width: 40%;'>";
         //document.getElementById("imagecheck").scrollIntoView();//화면이동
         
 	}
 	else if(e.value=="중구(서울)"){
         
-        //document.getElementById("imagecheck").innerHTML = "<img src='/static/images/area/seoul/junggu.png' alt='1' style='width:40%;margin-right: 100px;'>";
-                var ctx = document.getElementById("myChart");
-		var myChart = new Chart(ctx, {
-		type: 'bar',
-		data: {
-		labels: ["2020/02","2020/03","2020/04","2020/05","2020/06","2020/07","2020/08"],
-		datasets: [{
-		label: '코로나 확진자 추이',
-		data: [0,5,1,3,3,8,24],
-		backgroundColor: [
-			'rgba(255, 99, 132, 0.2)',
-			'rgba(54, 162, 235, 0.2)',
-			'rgba(255, 206, 86, 0.2)',
-			'rgba(75, 192, 192, 0.2)',
-			'rgba(153, 102, 255, 0.2)',
-			'rgba(255, 159, 64, 0.2)',
-			'rgba(255, 99, 132, 0.2)'
-		],
-		borderColor: [
-			'rgba(255,99,132,1)',
-			'rgba(54, 162, 235, 1)',
-			'rgba(255, 206, 86, 1)',
-			'rgba(75, 192, 192, 1)',
-			'rgba(153, 102, 255, 1)',
-			'rgba(255, 159, 64, 1)',
-			'rgba(255,99,132,1)'
-		],
-		borderWidth: 1
-		}]
-	},
-	options: {
-		responsive: false,
-		scales: {
-		xAxes: [{
-			ticks: {
-			maxRotation: 90,
-			minRotation: 80
-			}
-		}],
-		yAxes: [{
-			ticks: {
-			beginAtZero: true
-			}
-		}]
-		}
-	}
-	});
         
     }
 	else if(e.value=="서초구"){
-        //document.getElementById("imagecheck").innerHTML = "<img src='/static/images/area/seoul/seocho.png' alt='1' style='width:40%;margin-right: 100px;'>";
-                        var ctx = document.getElementById("myChart");
-		var myChart = new Chart(ctx, {
-		type: 'bar',
-		data: {
-		labels: ["2020/02","2020/03","2020/04","2020/05","2020/06","2020/07","2020/08"],
-		datasets: [{
-		label: '코로나 확진자 추이',
-		data: ['4', '21', '13', '4', '15', '7', '64'],
-		backgroundColor: [
-			'rgba(255, 99, 132, 0.2)',
-			'rgba(54, 162, 235, 0.2)',
-			'rgba(255, 206, 86, 0.2)',
-			'rgba(75, 192, 192, 0.2)',
-			'rgba(153, 102, 255, 0.2)',
-			'rgba(255, 159, 64, 0.2)',
-			'rgba(255, 99, 132, 0.2)'
-		],
-		borderColor: [
-			'rgba(255,99,132,1)',
-			'rgba(54, 162, 235, 1)',
-			'rgba(255, 206, 86, 1)',
-			'rgba(75, 192, 192, 1)',
-			'rgba(153, 102, 255, 1)',
-			'rgba(255, 159, 64, 1)',
-			'rgba(255,99,132,1)'
-		],
-		borderWidth: 1
-		}]
-	},
-	options: {
-		responsive: false,
-		scales: {
-		xAxes: [{
-			ticks: {
-			maxRotation: 90,
-			minRotation: 80
-			}
-		}],
-		yAxes: [{
-			ticks: {
-			beginAtZero: true
-			}
-		}]
-		}
-	}
-	});
+
     }
 	else if(e.value=="송파구"){
-        //document.getElementById("imagecheck").innerHTML = "<img src='/static/images/area/seocho.png' alt='1'>";
-                        var ctx = document.getElementById("myChart");
-		var myChart = new Chart(ctx, {
-		type: 'bar',
-		data: {
-		labels: ["2020/02","2020/03","2020/04","2020/05","2020/06","2020/07","2020/08"],
-		datasets: [{
-		label: '코로나 확진자 추이',
-		data: ['12', '15', '10', '11', '7', '43', '129'],
-		backgroundColor: [
-			'rgba(255, 99, 132, 0.2)',
-			'rgba(54, 162, 235, 0.2)',
-			'rgba(255, 206, 86, 0.2)',
-			'rgba(75, 192, 192, 0.2)',
-			'rgba(153, 102, 255, 0.2)',
-			'rgba(255, 159, 64, 0.2)',
-			'rgba(255, 99, 132, 0.2)'
-		],
-		borderColor: [
-			'rgba(255,99,132,1)',
-			'rgba(54, 162, 235, 1)',
-			'rgba(255, 206, 86, 1)',
-			'rgba(75, 192, 192, 1)',
-			'rgba(153, 102, 255, 1)',
-			'rgba(255, 159, 64, 1)',
-			'rgba(255,99,132,1)'
-		],
-		borderWidth: 1
-		}]
-	},
-	options: {
-		responsive: false,
-		scales: {
-		xAxes: [{
-			ticks: {
-			maxRotation: 90,
-			minRotation: 80
-			}
-		}],
-		yAxes: [{
-			ticks: {
-			beginAtZero: true
-			}
-		}]
-		}
-	}
-	});
+  
     }
 	else if(e.value=="마포구"){//csv에 마포구가 없..
-        //document.getElementById("imagecheck").innerHTML = "<img src='/static/images/area/seoul/mapo.png' alt='1'>";
-                        var ctx = document.getElementById("myChart");
-		var myChart = new Chart(ctx, {
-		type: 'bar',
-		data: {
-		labels: ["2020/02","2020/03","2020/04","2020/05","2020/06","2020/07","2020/08"],
-		datasets: [{
-		label: '코로나 확진자 추이',
-		data: ['2', '18', '5', '11', '29', '7', '46'],
-		backgroundColor: [
-			'rgba(255, 99, 132, 0.2)',
-			'rgba(54, 162, 235, 0.2)',
-			'rgba(255, 206, 86, 0.2)',
-			'rgba(75, 192, 192, 0.2)',
-			'rgba(153, 102, 255, 0.2)',
-			'rgba(255, 159, 64, 0.2)',
-			'rgba(255, 99, 132, 0.2)'
-		],
-		borderColor: [
-			'rgba(255,99,132,1)',
-			'rgba(54, 162, 235, 1)',
-			'rgba(255, 206, 86, 1)',
-			'rgba(75, 192, 192, 1)',
-			'rgba(153, 102, 255, 1)',
-			'rgba(255, 159, 64, 1)',
-			'rgba(255,99,132,1)'
-		],
-		borderWidth: 1
-		}]
-	},
-	options: {
-		responsive: false,
-		scales: {
-		xAxes: [{
-			ticks: {
-			maxRotation: 90,
-			minRotation: 80
-			}
-		}],
-		yAxes: [{
-			ticks: {
-			beginAtZero: true
-			}
-		}]
-		}
-	}
-	});
+        
     }
 	else if(e.value=="영등포구"){
-        //document.getElementById("imagecheck").innerHTML = "<img src='/static/images/area/seoul/youngdeongpo.png' alt='1'>";
-                        var ctx = document.getElementById("myChart");
-		var myChart = new Chart(ctx, {
-		type: 'bar',
-		data: {
-		labels: ["2020/02","2020/03","2020/04","2020/05","2020/06","2020/07","2020/08"],
-		datasets: [{
-		label: '코로나 확진자 추이',
-		data: ['2', '18', '5', '11', '29', '7', '46'],
-		backgroundColor: [
-			'rgba(255, 99, 132, 0.2)',
-			'rgba(54, 162, 235, 0.2)',
-			'rgba(255, 206, 86, 0.2)',
-			'rgba(75, 192, 192, 0.2)',
-			'rgba(153, 102, 255, 0.2)',
-			'rgba(255, 159, 64, 0.2)',
-			'rgba(255, 99, 132, 0.2)'
-		],
-		borderColor: [
-			'rgba(255,99,132,1)',
-			'rgba(54, 162, 235, 1)',
-			'rgba(255, 206, 86, 1)',
-			'rgba(75, 192, 192, 1)',
-			'rgba(153, 102, 255, 1)',
-			'rgba(255, 159, 64, 1)',
-			'rgba(255,99,132,1)'
-		],
-		borderWidth: 1
-		}]
-	},
-	options: {
-		responsive: false,
-		scales: {
-		xAxes: [{
-			ticks: {
-			maxRotation: 90,
-			minRotation: 80
-			}
-		}],
-		yAxes: [{
-			ticks: {
-			beginAtZero: true
-			}
-		}]
-		}
-	}
-	});
+        
     }
 	else if(e.value=="종로구"){
-        //document.getElementById("imagecheck").innerHTML = "<img src='/static/images/area/seoul/jongro.png' alt='1'>";
-                        var ctx = document.getElementById("myChart");
-		var myChart = new Chart(ctx, {
-		type: 'bar',
-		data: {
-		labels: ["2020/02","2020/03","2020/04","2020/05","2020/06","2020/07","2020/08"],
-		datasets: [{
-		label: '코로나 확진자 추이',
-		data: ['8', '4', '1', '3', '3', '6', '31'],
-		backgroundColor: [
-			'rgba(255, 99, 132, 0.2)',
-			'rgba(54, 162, 235, 0.2)',
-			'rgba(255, 206, 86, 0.2)',
-			'rgba(75, 192, 192, 0.2)',
-			'rgba(153, 102, 255, 0.2)',
-			'rgba(255, 159, 64, 0.2)',
-			'rgba(255, 99, 132, 0.2)'
-		],
-		borderColor: [
-			'rgba(255,99,132,1)',
-			'rgba(54, 162, 235, 1)',
-			'rgba(255, 206, 86, 1)',
-			'rgba(75, 192, 192, 1)',
-			'rgba(153, 102, 255, 1)',
-			'rgba(255, 159, 64, 1)',
-			'rgba(255,99,132,1)'
-		],
-		borderWidth: 1
-		}]
-	},
-	options: {
-		responsive: false,
-		scales: {
-		xAxes: [{
-			ticks: {
-			maxRotation: 90,
-			minRotation: 80
-			}
-		}],
-		yAxes: [{
-			ticks: {
-			beginAtZero: true
-			}
-		}]
-		}
-	}
-	});
+        
     }
 	else if(e.value=="강서구"){
-        //document.getElementById("imagecheck").innerHTML = "<img src='/static/images/area/seoul/gangseo.png' alt='1'>";
-                        var ctx = document.getElementById("myChart");
-		var myChart = new Chart(ctx, {
-		type: 'bar',
-		data: {
-		labels: ["2020/02","2020/03","2020/04","2020/05","2020/06","2020/07","2020/08"],
-		datasets: [{
-		label: '코로나 확진자 추이',
-		data: ['1', '20', '4', '19', '33', '25', '89'],
-		backgroundColor: [
-			'rgba(255, 99, 132, 0.2)',
-			'rgba(54, 162, 235, 0.2)',
-			'rgba(255, 206, 86, 0.2)',
-			'rgba(75, 192, 192, 0.2)',
-			'rgba(153, 102, 255, 0.2)',
-			'rgba(255, 159, 64, 0.2)',
-			'rgba(255, 99, 132, 0.2)'
-		],
-		borderColor: [
-			'rgba(255,99,132,1)',
-			'rgba(54, 162, 235, 1)',
-			'rgba(255, 206, 86, 1)',
-			'rgba(75, 192, 192, 1)',
-			'rgba(153, 102, 255, 1)',
-			'rgba(255, 159, 64, 1)',
-			'rgba(255,99,132,1)'
-		],
-		borderWidth: 1
-		}]
-	},
-	options: {
-		responsive: false,
-		scales: {
-		xAxes: [{
-			ticks: {
-			maxRotation: 90,
-			minRotation: 80
-			}
-		}],
-		yAxes: [{
-			ticks: {
-			beginAtZero: true
-			}
-		}]
-		}
-	}
-	});
+        
     }
 	else if(e.value=="구로구"){
-        //document.getElementById("imagecheck").innerHTML = "<img src='/static/images/area/seoul/guro.png' alt='1'>";
-                        var ctx = document.getElementById("myChart");
-		var myChart = new Chart(ctx, {
-		type: 'bar',
-		data: {
-		labels: ["2020/02","2020/03","2020/04","2020/05","2020/06","2020/07","2020/08"],
-		datasets: [{
-		label: '코로나 확진자 추이',
-		data: ['1', '33', '1', '6', '45', '5', '49'],
-		backgroundColor: [
-			'rgba(255, 99, 132, 0.2)',
-			'rgba(54, 162, 235, 0.2)',
-			'rgba(255, 206, 86, 0.2)',
-			'rgba(75, 192, 192, 0.2)',
-			'rgba(153, 102, 255, 0.2)',
-			'rgba(255, 159, 64, 0.2)',
-			'rgba(255, 99, 132, 0.2)'
-		],
-		borderColor: [
-			'rgba(255,99,132,1)',
-			'rgba(54, 162, 235, 1)',
-			'rgba(255, 206, 86, 1)',
-			'rgba(75, 192, 192, 1)',
-			'rgba(153, 102, 255, 1)',
-			'rgba(255, 159, 64, 1)',
-			'rgba(255,99,132,1)'
-		],
-		borderWidth: 1
-		}]
-	},
-	options: {
-		responsive: false,
-		scales: {
-		xAxes: [{
-			ticks: {
-			maxRotation: 90,
-			minRotation: 80
-			}
-		}],
-		yAxes: [{
-			ticks: {
-			beginAtZero: true
-			}
-		}]
-		}
-	}
-	});
+        
     }
 	else if(e.value=="강동구"){
-        //document.getElementById("imagecheck").innerHTML = "<img src='/static/images/area/seoulgangdong.png' alt='1'>";
-                        var ctx = document.getElementById("myChart");
-		var myChart = new Chart(ctx, {
-		type: 'bar',
-		data: {
-		labels: ["2020/02","2020/03","2020/04","2020/05","2020/06","2020/07","2020/08"],
-		datasets: [{
-		label: '코로나 확진자 추이',
-		data: ['4', '6', '3', '11', '11', '14', '82'],
-		backgroundColor: [
-			'rgba(255, 99, 132, 0.2)',
-			'rgba(54, 162, 235, 0.2)',
-			'rgba(255, 206, 86, 0.2)',
-			'rgba(75, 192, 192, 0.2)',
-			'rgba(153, 102, 255, 0.2)',
-			'rgba(255, 159, 64, 0.2)',
-			'rgba(255, 99, 132, 0.2)'
-		],
-		borderColor: [
-			'rgba(255,99,132,1)',
-			'rgba(54, 162, 235, 1)',
-			'rgba(255, 206, 86, 1)',
-			'rgba(75, 192, 192, 1)',
-			'rgba(153, 102, 255, 1)',
-			'rgba(255, 159, 64, 1)',
-			'rgba(255,99,132,1)'
-		],
-		borderWidth: 1
-		}]
-	},
-	options: {
-		responsive: false,
-		scales: {
-		xAxes: [{
-			ticks: {
-			maxRotation: 90,
-			minRotation: 80
-			}
-		}],
-		yAxes: [{
-			ticks: {
-			beginAtZero: true
-			}
-		}]
-		}
-	}
-	});
+        
     }
 	else if(e.value=="동대문구"){
-        //document.getElementById("imagecheck").innerHTML = "<img src='/static/images/area/seoul/dongdaemun.png' alt='1'>";
-                        var ctx = document.getElementById("myChart");
-		var myChart = new Chart(ctx, {
-		type: 'bar',
-		data: {
-		labels: ["2020/02","2020/03","2020/04","2020/05","2020/06","2020/07","2020/08"],
-		datasets: [{
-		label: '코로나 확진자 추이',
-		data: ['1', '25', '5', '3', '4', '6', '63'],
-		backgroundColor: [
-			'rgba(255, 99, 132, 0.2)',
-			'rgba(54, 162, 235, 0.2)',
-			'rgba(255, 206, 86, 0.2)',
-			'rgba(75, 192, 192, 0.2)',
-			'rgba(153, 102, 255, 0.2)',
-			'rgba(255, 159, 64, 0.2)',
-			'rgba(255, 99, 132, 0.2)'
-		],
-		borderColor: [
-			'rgba(255,99,132,1)',
-			'rgba(54, 162, 235, 1)',
-			'rgba(255, 206, 86, 1)',
-			'rgba(75, 192, 192, 1)',
-			'rgba(153, 102, 255, 1)',
-			'rgba(255, 159, 64, 1)',
-			'rgba(255,99,132,1)'
-		],
-		borderWidth: 1
-		}]
-	},
-	options: {
-		responsive: false,
-		scales: {
-		xAxes: [{
-			ticks: {
-			maxRotation: 90,
-			minRotation: 80
-			}
-		}],
-		yAxes: [{
-			ticks: {
-			beginAtZero: true
-			}
-		}]
-		}
-	}
-	});
+        
     }
 	else if(e.value=="관악구"){
-        //document.getElementById("imagecheck").innerHTML = "<img src='/static/images/area/seoul/gwanak.png' alt='1'>";
-                        var ctx = document.getElementById("myChart");
-		var myChart = new Chart(ctx, {
-		type: 'bar',
-		data: {
-		labels: ["2020/02","2020/03","2020/04","2020/05","2020/06","2020/07","2020/08"],
-		datasets: [{
-		label: '코로나 확진자 추이',
-		data: ['4', '30', '9', '16', '58', '27', '75'],
-		backgroundColor: [
-			'rgba(255, 99, 132, 0.2)',
-			'rgba(54, 162, 235, 0.2)',
-			'rgba(255, 206, 86, 0.2)',
-			'rgba(75, 192, 192, 0.2)',
-			'rgba(153, 102, 255, 0.2)',
-			'rgba(255, 159, 64, 0.2)',
-			'rgba(255, 99, 132, 0.2)'
-		],
-		borderColor: [
-			'rgba(255,99,132,1)',
-			'rgba(54, 162, 235, 1)',
-			'rgba(255, 206, 86, 1)',
-			'rgba(75, 192, 192, 1)',
-			'rgba(153, 102, 255, 1)',
-			'rgba(255, 159, 64, 1)',
-			'rgba(255,99,132,1)'
-		],
-		borderWidth: 1
-		}]
-	},
-	options: {
-		responsive: false,
-		scales: {
-		xAxes: [{
-			ticks: {
-			maxRotation: 90,
-			minRotation: 80
-			}
-		}],
-		yAxes: [{
-			ticks: {
-			beginAtZero: true
-			}
-		}]
-		}
-	}
-	});
+        
     }
 	else if(e.value=="노원구"){
-        //document.getElementById("imagecheck").innerHTML = "<img src='/static/images/area/seoul/nowon.png' alt='1'>";
-                        var ctx = document.getElementById("myChart");
-		var myChart = new Chart(ctx, {
-		type: 'bar',
-		data: {
-		labels: ["2020/02","2020/03","2020/04","2020/05","2020/06","2020/07","2020/08"],
-		datasets: [{
-		label: '코로나 확진자 추이',
-		data: ['8', '12', '3', '8', '13', '6', '125'],
-		backgroundColor: [
-			'rgba(255, 99, 132, 0.2)',
-			'rgba(54, 162, 235, 0.2)',
-			'rgba(255, 206, 86, 0.2)',
-			'rgba(75, 192, 192, 0.2)',
-			'rgba(153, 102, 255, 0.2)',
-			'rgba(255, 159, 64, 0.2)',
-			'rgba(255, 99, 132, 0.2)'
-		],
-		borderColor: [
-			'rgba(255,99,132,1)',
-			'rgba(54, 162, 235, 1)',
-			'rgba(255, 206, 86, 1)',
-			'rgba(75, 192, 192, 1)',
-			'rgba(153, 102, 255, 1)',
-			'rgba(255, 159, 64, 1)',
-			'rgba(255,99,132,1)'
-		],
-		borderWidth: 1
-		}]
-	},
-	options: {
-		responsive: false,
-		scales: {
-		xAxes: [{
-			ticks: {
-			maxRotation: 90,
-			minRotation: 80
-			}
-		}],
-		yAxes: [{
-			ticks: {
-			beginAtZero: true
-			}
-		}]
-		}
-	}
-	});
+       
     }
 	else if(e.value=="양천구"){
-        //document.getElementById("imagecheck").innerHTML = "<img src='/static/images/area/seoul/yangcheon.png' alt='1'>";
-                        var ctx = document.getElementById("myChart");
-		var myChart = new Chart(ctx, {
-		type: 'bar',
-		data: {
-		labels: ["2020/02","2020/03","2020/04","2020/05","2020/06","2020/07","2020/08"],
-		datasets: [{
-		label: '코로나 확진자 추이',
-		data: ['1', '17', '3', '6', '43', '1', '61'],
-		backgroundColor: [
-			'rgba(255, 99, 132, 0.2)',
-			'rgba(54, 162, 235, 0.2)',
-			'rgba(255, 206, 86, 0.2)',
-			'rgba(75, 192, 192, 0.2)',
-			'rgba(153, 102, 255, 0.2)',
-			'rgba(255, 159, 64, 0.2)',
-			'rgba(255, 99, 132, 0.2)'
-		],
-		borderColor: [
-			'rgba(255,99,132,1)',
-			'rgba(54, 162, 235, 1)',
-			'rgba(255, 206, 86, 1)',
-			'rgba(75, 192, 192, 1)',
-			'rgba(153, 102, 255, 1)',
-			'rgba(255, 159, 64, 1)',
-			'rgba(255,99,132,1)'
-		],
-		borderWidth: 1
-		}]
-	},
-	options: {
-		responsive: false,
-		scales: {
-		xAxes: [{
-			ticks: {
-			maxRotation: 90,
-			minRotation: 80
-			}
-		}],
-		yAxes: [{
-			ticks: {
-			beginAtZero: true
-			}
-		}]
-		}
-	}
-	});
+        
     }
 	else if(e.value=="용산구"){
-        //document.getElementById("imagecheck").innerHTML = "<img src='/static/images/area/seoul/yongsan.png' alt='1'>";
-                        var ctx = document.getElementById("myChart");
-		var myChart = new Chart(ctx, {
-		type: 'bar',
-		data: {
-		labels: ["2020/02","2020/03","2020/04","2020/05","2020/06","2020/07","2020/08"],
-		datasets: [{
-		label: '코로나 확진자 추이',
-		data: ['0', '12', '6', '20', '12', '4', '44'],
-		backgroundColor: [
-			'rgba(255, 99, 132, 0.2)',
-			'rgba(54, 162, 235, 0.2)',
-			'rgba(255, 206, 86, 0.2)',
-			'rgba(75, 192, 192, 0.2)',
-			'rgba(153, 102, 255, 0.2)',
-			'rgba(255, 159, 64, 0.2)',
-			'rgba(255, 99, 132, 0.2)'
-		],
-		borderColor: [
-			'rgba(255,99,132,1)',
-			'rgba(54, 162, 235, 1)',
-			'rgba(255, 206, 86, 1)',
-			'rgba(75, 192, 192, 1)',
-			'rgba(153, 102, 255, 1)',
-			'rgba(255, 159, 64, 1)',
-			'rgba(255,99,132,1)'
-		],
-		borderWidth: 1
-		}]
-	},
-	options: {
-		responsive: false,
-		scales: {
-		xAxes: [{
-			ticks: {
-			maxRotation: 90,
-			minRotation: 80
-			}
-		}],
-		yAxes: [{
-			ticks: {
-			beginAtZero: true
-			}
-		}]
-		}
-	}
-	});
+        
     }
 	else if(e.value=="광진구"){
-        //document.getElementById("imagecheck").innerHTML = "<img src='/static/images/area/seoul/gwangjin.png' alt='1'>";
-                        var ctx = document.getElementById("myChart");
-		var myChart = new Chart(ctx, {
-		type: 'bar',
-		data: {
-		labels: ["2020/02","2020/03","2020/04","2020/05","2020/06","2020/07","2020/08"],
-		datasets: [{
-		label: '코로나 확진자 추이',
-		data: ['1', '5', '2', '6', '3', '5', '55'],
-		backgroundColor: [
-			'rgba(255, 99, 132, 0.2)',
-			'rgba(54, 162, 235, 0.2)',
-			'rgba(255, 206, 86, 0.2)',
-			'rgba(75, 192, 192, 0.2)',
-			'rgba(153, 102, 255, 0.2)',
-			'rgba(255, 159, 64, 0.2)',
-			'rgba(255, 99, 132, 0.2)'
-		],
-		borderColor: [
-			'rgba(255,99,132,1)',
-			'rgba(54, 162, 235, 1)',
-			'rgba(255, 206, 86, 1)',
-			'rgba(75, 192, 192, 1)',
-			'rgba(153, 102, 255, 1)',
-			'rgba(255, 159, 64, 1)',
-			'rgba(255,99,132,1)'
-		],
-		borderWidth: 1
-		}]
-	},
-	options: {
-		responsive: false,
-		scales: {
-		xAxes: [{
-			ticks: {
-			maxRotation: 90,
-			minRotation: 80
-			}
-		}],
-		yAxes: [{
-			ticks: {
-			beginAtZero: true
-			}
-		}]
-		}
-	}
-	});
+        
     }
 	else if(e.value=="은평구"){
-        //document.getElementById("imagecheck").innerHTML = "<img src='/static/images/area/seoul/eunpyeong.png' alt='1'>";
-                        var ctx = document.getElementById("myChart");
-		var myChart = new Chart(ctx, {
-		type: 'bar',
-		data: {
-		labels: ["2020/02","2020/03","2020/04","2020/05","2020/06","2020/07","2020/08"],
-		datasets: [{
-		label: '코로나 확진자 추이',
-		data: ['7', '14', '7', '7', '18', '11', '103'],
-		backgroundColor: [
-			'rgba(255, 99, 132, 0.2)',
-			'rgba(54, 162, 235, 0.2)',
-			'rgba(255, 206, 86, 0.2)',
-			'rgba(75, 192, 192, 0.2)',
-			'rgba(153, 102, 255, 0.2)',
-			'rgba(255, 159, 64, 0.2)',
-			'rgba(255, 99, 132, 0.2)'
-		],
-		borderColor: [
-			'rgba(255,99,132,1)',
-			'rgba(54, 162, 235, 1)',
-			'rgba(255, 206, 86, 1)',
-			'rgba(75, 192, 192, 1)',
-			'rgba(153, 102, 255, 1)',
-			'rgba(255, 159, 64, 1)',
-			'rgba(255,99,132,1)'
-		],
-		borderWidth: 1
-		}]
-	},
-	options: {
-		responsive: false,
-		scales: {
-		xAxes: [{
-			ticks: {
-			maxRotation: 90,
-			minRotation: 80
-			}
-		}],
-		yAxes: [{
-			ticks: {
-			beginAtZero: true
-			}
-		}]
-		}
-	}
-	});
+        
     }
 	else if(e.value=="성북구"){
-        //document.getElementById("imagecheck").innerHTML = "<img src='/static/images/area/seoul/sungbuk.png' alt='1'>";
-                        var ctx = document.getElementById("myChart");
-		var myChart = new Chart(ctx, {
-		type: 'bar',
-		data: {
-		labels: ["2020/02","2020/03","2020/04","2020/05","2020/06","2020/07","2020/08"],
-		datasets: [{
-		label: '코로나 확진자 추이',
-		data: ['1', '13', '9', '5', '4', '9', '216'],
-		backgroundColor: [
-			'rgba(255, 99, 132, 0.2)',
-			'rgba(54, 162, 235, 0.2)',
-			'rgba(255, 206, 86, 0.2)',
-			'rgba(75, 192, 192, 0.2)',
-			'rgba(153, 102, 255, 0.2)',
-			'rgba(255, 159, 64, 0.2)',
-			'rgba(255, 99, 132, 0.2)'
-		],
-		borderColor: [
-			'rgba(255,99,132,1)',
-			'rgba(54, 162, 235, 1)',
-			'rgba(255, 206, 86, 1)',
-			'rgba(75, 192, 192, 1)',
-			'rgba(153, 102, 255, 1)',
-			'rgba(255, 159, 64, 1)',
-			'rgba(255,99,132,1)'
-		],
-		borderWidth: 1
-		}]
-	},
-	options: {
-		responsive: false,
-		scales: {
-		xAxes: [{
-			ticks: {
-			maxRotation: 90,
-			minRotation: 80
-			}
-		}],
-		yAxes: [{
-			ticks: {
-			beginAtZero: true
-			}
-		}]
-		}
-	}
-	});
+
     }
 	else if(e.value=="성동구"){
-        //document.getElementById("imagecheck").innerHTML = "<img src='/static/images/area/seoul/sungdong.png' alt='1'>";
-                        var ctx = document.getElementById("myChart");
-		var myChart = new Chart(ctx, {
-		type: 'bar',
-		data: {
-		labels: ["2020/02","2020/03","2020/04","2020/05","2020/06","2020/07","2020/08"],
-		datasets: [{
-		label: '코로나 확진자 추이',
-		data: ['3', '3', '13', '21', '9', '8', '28'],
-		backgroundColor: [
-			'rgba(255, 99, 132, 0.2)',
-			'rgba(54, 162, 235, 0.2)',
-			'rgba(255, 206, 86, 0.2)',
-			'rgba(75, 192, 192, 0.2)',
-			'rgba(153, 102, 255, 0.2)',
-			'rgba(255, 159, 64, 0.2)',
-			'rgba(255, 99, 132, 0.2)'
-		],
-		borderColor: [
-			'rgba(255,99,132,1)',
-			'rgba(54, 162, 235, 1)',
-			'rgba(255, 206, 86, 1)',
-			'rgba(75, 192, 192, 1)',
-			'rgba(153, 102, 255, 1)',
-			'rgba(255, 159, 64, 1)',
-			'rgba(255,99,132,1)'
-		],
-		borderWidth: 1
-		}]
-	},
-	options: {
-		responsive: false,
-		scales: {
-		xAxes: [{
-			ticks: {
-			maxRotation: 90,
-			minRotation: 80
-			}
-		}],
-		yAxes: [{
-			ticks: {
-			beginAtZero: true
-			}
-		}]
-		}
-	}
-	});
+       
     }
 	else if(e.value=="중랑구"){
-        //document.getElementById("imagecheck").innerHTML = "<img src='/static/images/area/seoul/jungrang.png' alt='1'>";
-                        var ctx = document.getElementById("myChart");
-		var myChart = new Chart(ctx, {
-		type: 'bar',
-		data: {
-		labels: ["2020/02","2020/03","2020/04","2020/05","2020/06","2020/07","2020/08"],
-		datasets: [{
-		label: '코로나 확진자 추이',
-		data: ['0', '12', '3', '3', '14', '11', '84'],
-		backgroundColor: [
-			'rgba(255, 99, 132, 0.2)',
-			'rgba(54, 162, 235, 0.2)',
-			'rgba(255, 206, 86, 0.2)',
-			'rgba(75, 192, 192, 0.2)',
-			'rgba(153, 102, 255, 0.2)',
-			'rgba(255, 159, 64, 0.2)',
-			'rgba(255, 99, 132, 0.2)'
-		],
-		borderColor: [
-			'rgba(255,99,132,1)',
-			'rgba(54, 162, 235, 1)',
-			'rgba(255, 206, 86, 1)',
-			'rgba(75, 192, 192, 1)',
-			'rgba(153, 102, 255, 1)',
-			'rgba(255, 159, 64, 1)',
-			'rgba(255,99,132,1)'
-		],
-		borderWidth: 1
-		}]
-	},
-	options: {
-		responsive: false,
-		scales: {
-		xAxes: [{
-			ticks: {
-			maxRotation: 90,
-			minRotation: 80
-			}
-		}],
-		yAxes: [{
-			ticks: {
-			beginAtZero: true
-			}
-		}]
-		}
-	}
-	});
+       
     }
 	else if(e.value=="금천구"){
-        //document.getElementById("imagecheck").innerHTML = "<img src='/static/images/area/seoul/gunchun.png' alt='1'>";
-                        var ctx = document.getElementById("myChart");
-		var myChart = new Chart(ctx, {
-		type: 'bar',
-		data: {
-		labels: ["2020/02","2020/03","2020/04","2020/05","2020/06","2020/07","2020/08"],
-		datasets: [{
-		label: '코로나 확진자 추이',
-		data: ['1', '11', '0', '3', '17', '7', '28'],
-		backgroundColor: [
-			'rgba(255, 99, 132, 0.2)',
-			'rgba(54, 162, 235, 0.2)',
-			'rgba(255, 206, 86, 0.2)',
-			'rgba(75, 192, 192, 0.2)',
-			'rgba(153, 102, 255, 0.2)',
-			'rgba(255, 159, 64, 0.2)',
-			'rgba(255, 99, 132, 0.2)'
-		],
-		borderColor: [
-			'rgba(255,99,132,1)',
-			'rgba(54, 162, 235, 1)',
-			'rgba(255, 206, 86, 1)',
-			'rgba(75, 192, 192, 1)',
-			'rgba(153, 102, 255, 1)',
-			'rgba(255, 159, 64, 1)',
-			'rgba(255,99,132,1)'
-		],
-		borderWidth: 1
-		}]
-	},
-	options: {
-		responsive: false,
-		scales: {
-		xAxes: [{
-			ticks: {
-			maxRotation: 90,
-			minRotation: 80
-			}
-		}],
-		yAxes: [{
-			ticks: {
-			beginAtZero: true
-			}
-		}]
-		}
-	}
-	});
+       
     }
 	else if(e.value=="동작구"){
-        //document.getElementById("imagecheck").innerHTML = "<img src='/static/images/area/seoul/dongjak.png' alt='1'>";
-                        var ctx = document.getElementById("myChart");
-		var myChart = new Chart(ctx, {
-		type: 'bar',
-		data: {
-		labels: ["2020/02","2020/03","2020/04","2020/05","2020/06","2020/07","2020/08"],
-		datasets: [{
-		label: '코로나 확진자 추이',
-		data: ['1', '23', '7', '9', '13', '17', '65'],
-		backgroundColor: [
-			'rgba(255, 99, 132, 0.2)',
-			'rgba(54, 162, 235, 0.2)',
-			'rgba(255, 206, 86, 0.2)',
-			'rgba(75, 192, 192, 0.2)',
-			'rgba(153, 102, 255, 0.2)',
-			'rgba(255, 159, 64, 0.2)',
-			'rgba(255, 99, 132, 0.2)'
-		],
-		borderColor: [
-			'rgba(255,99,132,1)',
-			'rgba(54, 162, 235, 1)',
-			'rgba(255, 206, 86, 1)',
-			'rgba(75, 192, 192, 1)',
-			'rgba(153, 102, 255, 1)',
-			'rgba(255, 159, 64, 1)',
-			'rgba(255,99,132,1)'
-		],
-		borderWidth: 1
-		}]
-	},
-	options: {
-		responsive: false,
-		scales: {
-		xAxes: [{
-			ticks: {
-			maxRotation: 90,
-			minRotation: 80
-			}
-		}],
-		yAxes: [{
-			ticks: {
-			beginAtZero: true
-			}
-		}]
-		}
-	}
-	});
+       
     }
 	else if(e.value=="서대문구"){
-        //document.getElementById("imagecheck").innerHTML = "<img src='/static/images/area/seoul/seodaemun.png' alt='1'>";
-                        var ctx = document.getElementById("myChart");
-		var myChart = new Chart(ctx, {
-		type: 'bar',
-		data: {
-		labels: ["2020/02","2020/03","2020/04","2020/05","2020/06","2020/07","2020/08"],
-		datasets: [{
-		label: '코로나 확진자 추이',
-		data: ['4', '9', '6', '8', '8', '6', '40'],
-		backgroundColor: [
-			'rgba(255, 99, 132, 0.2)',
-			'rgba(54, 162, 235, 0.2)',
-			'rgba(255, 206, 86, 0.2)',
-			'rgba(75, 192, 192, 0.2)',
-			'rgba(153, 102, 255, 0.2)',
-			'rgba(255, 159, 64, 0.2)',
-			'rgba(255, 99, 132, 0.2)'
-		],
-		borderColor: [
-			'rgba(255,99,132,1)',
-			'rgba(54, 162, 235, 1)',
-			'rgba(255, 206, 86, 1)',
-			'rgba(75, 192, 192, 1)',
-			'rgba(153, 102, 255, 1)',
-			'rgba(255, 159, 64, 1)',
-			'rgba(255,99,132,1)'
-		],
-		borderWidth: 1
-		}]
-	},
-	options: {
-		responsive: false,
-		scales: {
-		xAxes: [{
-			ticks: {
-			maxRotation: 90,
-			minRotation: 80
-			}
-		}],
-		yAxes: [{
-			ticks: {
-			beginAtZero: true
-			}
-		}]
-		}
-	}
-	});
+       
     }
 	else if(e.value=="강북구"){
-        //document.getElementById("imagecheck").innerHTML = "<img src='/static/images/area/seoul/gangbuk.png' alt='1'>";
-                        var ctx = document.getElementById("myChart");
-		var myChart = new Chart(ctx, {
-		type: 'bar',
-		data: {
-		labels: ["2020/02","2020/03","2020/04","2020/05","2020/06","2020/07","2020/08"],
-		datasets: [{
-		label: '코로나 확진자 추이',
-		data: ['0', '5', '0', '9', '10', '4', '68'],
-		backgroundColor: [
-			'rgba(255, 99, 132, 0.2)',
-			'rgba(54, 162, 235, 0.2)',
-			'rgba(255, 206, 86, 0.2)',
-			'rgba(75, 192, 192, 0.2)',
-			'rgba(153, 102, 255, 0.2)',
-			'rgba(255, 159, 64, 0.2)',
-			'rgba(255, 99, 132, 0.2)'
-		],
-		borderColor: [
-			'rgba(255,99,132,1)',
-			'rgba(54, 162, 235, 1)',
-			'rgba(255, 206, 86, 1)',
-			'rgba(75, 192, 192, 1)',
-			'rgba(153, 102, 255, 1)',
-			'rgba(255, 159, 64, 1)',
-			'rgba(255,99,132,1)'
-		],
-		borderWidth: 1
-		}]
-	},
-	options: {
-		responsive: false,
-		scales: {
-		xAxes: [{
-			ticks: {
-			maxRotation: 90,
-			minRotation: 80
-			}
-		}],
-		yAxes: [{
-			ticks: {
-			beginAtZero: true
-			}
-		}]
-		}
-	}
-	});
+        
     }
 	else if(e.value=="도봉구"){
         //document.getElementById("imagecheck").innerHTML = "<img src='/static/images/area/seoul/gangnam.png' alt='1'>";
-                        var ctx = document.getElementById("myChart");
-		var myChart = new Chart(ctx, {
-		type: 'bar',
-		data: {
-		labels: ["2020/02","2020/03","2020/04","2020/05","2020/06","2020/07","2020/08"],
-		datasets: [{
-		label: '코로나 확진자 추이',
-		data: ['0', '6', '3', '10', '43', '2', '53'],
-		backgroundColor: [
-			'rgba(255, 99, 132, 0.2)',
-			'rgba(54, 162, 235, 0.2)',
-			'rgba(255, 206, 86, 0.2)',
-			'rgba(75, 192, 192, 0.2)',
-			'rgba(153, 102, 255, 0.2)',
-			'rgba(255, 159, 64, 0.2)',
-			'rgba(255, 99, 132, 0.2)'
-		],
-		borderColor: [
-			'rgba(255,99,132,1)',
-			'rgba(54, 162, 235, 1)',
-			'rgba(255, 206, 86, 1)',
-			'rgba(75, 192, 192, 1)',
-			'rgba(153, 102, 255, 1)',
-			'rgba(255, 159, 64, 1)',
-			'rgba(255,99,132,1)'
-		],
-		borderWidth: 1
-		}]
-	},
-	options: {
-		responsive: false,
-		scales: {
-		xAxes: [{
-			ticks: {
-			maxRotation: 90,
-			minRotation: 80
-			}
-		}],
-		yAxes: [{
-			ticks: {
-			beginAtZero: true
-			}
-		}]
-		}
-	}
-	});
+
     }
 	//-----부산(구 박스)"){}
 	else if(e.value=='부산진구'){
@@ -2080,4 +930,51 @@ function categoryChange3(e){ //3번째 박스
 	else if(e.value=="청원구"){}
 	else if(e.value=="흥덕구"){}
 }
-
+function myFunction(){
+    var ctx = document.getElementById("myChart2");
+		var myChart2 = new Chart(ctx, {
+		type: 'bar',
+		data: {
+		labels: ["2020/02","2020/03","2020/04","2020/05","2020/06","2020/07","2020/08"],
+		datasets: [{
+		label: '코로나 확진자 추이',
+		data: ['0', '6', '3', '10', '43', '2', '53'],
+		backgroundColor: [
+			'rgba(255, 99, 132, 0.2)',
+			'rgba(54, 162, 235, 0.2)',
+			'rgba(255, 206, 86, 0.2)',
+			'rgba(75, 192, 192, 0.2)',
+			'rgba(153, 102, 255, 0.2)',
+			'rgba(255, 159, 64, 0.2)',
+			'rgba(255, 99, 132, 0.2)'
+		],
+		borderColor: [
+			'rgba(255,99,132,1)',
+			'rgba(54, 162, 235, 1)',
+			'rgba(255, 206, 86, 1)',
+			'rgba(75, 192, 192, 1)',
+			'rgba(153, 102, 255, 1)',
+			'rgba(255, 159, 64, 1)',
+			'rgba(255,99,132,1)'
+		],
+		borderWidth: 1
+		}]
+	},
+	options: {
+		responsive: false,
+		scales: {
+		xAxes: [{
+			ticks: {
+			maxRotation: 90,
+			minRotation: 80
+			}
+		}],
+		yAxes: [{
+			ticks: {
+			beginAtZero: true
+			}
+		}]
+		}
+	}
+	});
+}

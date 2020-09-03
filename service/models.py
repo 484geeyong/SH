@@ -9,3 +9,18 @@ class Clean(models.Model):
     USE_CUS_CNT=models.FloatField()
     CORONA_CNT=models.FloatField()
     CLEAN=models.FloatField()
+    
+class Corona(models.Model):
+    CTY_NM=models.CharField(max_length=100, default='cty2')
+    CO2=models.FloatField()
+    CO3=models.FloatField()
+    CO4=models.FloatField()
+    CO5=models.FloatField()
+    CO6=models.FloatField()
+    CO7=models.FloatField()
+    CO8=models.FloatField()
+    
+class Upjong(models.Model):
+    CTY_NM=models.CharField(max_length=100, default='cty2')
+    WEAK_UPJONG=models.CharField(max_length=100)
+    

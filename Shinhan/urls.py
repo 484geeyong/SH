@@ -20,6 +20,5 @@ import service.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', service.views.index, name='index'),
-    path('location/', service.views.locationpost, name='nowlocation'),
     path('result/', service.views.selectarea, name='selectarea'),
 ]

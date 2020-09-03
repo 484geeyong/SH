@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gugi&family=Nanum+Gothic&family=Sunflower:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/kakaomap.css" >
     <link rel="stylesheet" href="/static/css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="/static/css/animate.css">
@@ -28,19 +29,24 @@
     <link rel="stylesheet" href="/static/css/flaticon.css">
     <link rel="stylesheet" href="/static/css/icomoon.css">
     <link rel="stylesheet" href="/static/css/style.css">
+      <style>
+          input {
+              font-family: 'Nanum Gothic', sans-serif;
+          }
+      </style>
       
   <body>
     
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container">
-        <a class="navbar-brand" href="index.html" style="font-size: 25px;">신한카드조</a>
+        <a class="navbar-brand" href="index.html" style="font-size: 30px; font-family: 'Nanum Gothic', sans-serif;">SWAG</a>
         <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="oi oi-menu"></span> Menu
         </button> -->
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
             
-            <li class="nav-item"><a href="test2.html" class="nav-link">제안 배경</a></li>
+            <!-- <li class="nav-item"><a href="test2.html" class="nav-link">제안 배경</a></li> -->
             <!-- <li class="nav-item"><a href="solutions.html" class="nav-link">Solution</a></li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="room.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Portfolio</a>
@@ -63,7 +69,7 @@
         <div class="container">
           <div class="row slider-text align-items-center justify-content-center">
             <div class="col-md-10 ftco-animate text-center">
-              <h1 class="mb-4"> 지역별 코로나19 피해 업종
+              <h1 class="mb-4" style="font-family: 'Nanum Gothic', sans-serif;"> 지역별 코로나19 피해 업종
                   <br>
                 <strong class="typewrite" data-period="2000" data-type='[ "발굴 및 지원 서비스", "발굴 및 지원 서비스"]'>
                   <span class="wrap"></span>
@@ -79,7 +85,7 @@
 
     <!-- <section class="ftco-section-featured ftco-animate"> -->
      <div class="box">
-          <form action="/result/" method="post">
+          <form action="/result/" method="post"style="font-family: 'Nanum Gothic', sans-serif;">
               {% csrf_token %}
         <select onchange="categoryChange(this)" name="cty1">
           <option>시/도</option>
@@ -105,241 +111,519 @@
         <select onchange="categoryChange2(this)" id="good" name="cty2">
           <option>시/군/구</option>
         </select>
-        <select onchange="categoryChange3(this)" id="good2" name="cty1">
+        <select onchange="categoryChange3(this)" id="good2" name="cty3">
           <option>읍/면/동</option>
 
         </select>
               
-        <button type="submit" id="search_area"  class="btn btn-primary" style="position: absolute; left: 150%;margin-left:30px; top: 8%; width: 18%;">검색</button>
+        <button type="submit" id="search_area" class="btn btn-primary" style="font-family: 'Nanum Gothic', sans-serif; position: absolute; left: 150%;margin-left:30px; top: 8%; width: 18%;">검색</button>
           </form>
         
       </div>
       
-      <!--
-        <div id="picture">
-           
-        </div>
-       <img id=gangNam src="/static/images/area/gangnam.png" alt="1">-->
-<!--
-      <img id=theImage src="/static/images/area/gangnam.png" alt="1">
-      <img id=dongjak src="/static/images/area/dongjak.png" alt="3" style=""> -->
-           
-      <!--<img id="junggu_co" src="/static/images/corona/level1.png" alt="1">   -->
-
-      <br><br>
-      <h3 id="cty_nm" style="text-align: center;">{{areaname}}</h3>
+<br><br><br>
+      <h2 id="cty_nm" style="font-family: 'Nanum Gothic', sans-serif; font-weight: bold; text-align: center;">{{areaname}}</h2>
       
-      <div>
+<div>
       <!--------이미지 디비에 넣어서 처리하는거 하기------------>
-      <div id="area_pic" style="width: 40%;float:left;margin-left:80px;">
-          <img src="{{pick.CTY_IMG}}" style="width: 100%;">
+      <div id="area_pic" style="width:35%; height:90%; float: left; border: 0px solid #78d5ef; margin: 35px 00px 10px 10%; margin-bottom: px; text-align:center;">
+          <img src="/static/images/area/{{pick.CTY_IMG}}" style="width: 90%; height: 90%;">
       </div>
-      
-            <!-------------------csv파일 확인------------------------>
-      
-    <!-- 코로나 지수 기준: level1: 99이상, level2: 94.5<x<99, level3: 90<x<=94.5, level4: 90이하 -->
-      <div  style="width: 35%;float:right;padding-top:10px;border: 1px solid #78d5ef; margin-right:80px;text-align:center;background-color:#78d5ef;">
-    <h5 style="color:black;size:20px;">코로나 청정지수:  {{pick.CLEAN|floatformat:4}}</h5>
-    </div>
-    <div id="clean_pic" style="width: 35%;height:70%;float: right; border: 1px solid #78d5ef; margin-right:80px;text-align:center;">
-     {% if pick.CLEAN >= 0.99 %}
-     <img src="/static/images/corona/level1.png" style="width:75%;">
-    {% elif pick.CLEAN > 0.945 %}
-     <img src="/static/images/corona/level2.png" style="width:75%;">
-     {% elif pick.CLEAN > 0.90 %}
-     <img src="/static/images/corona/level3.png" style="width:75%;">
-     {% else %}
-     <img src="/static/images/corona/level4.png" style="width:75%;">
-     {% endif %}
-    </div>
-  
-    </div> 
-      <div id="corona_graph" style="float: right; margin-right:80px;">
-          <canvas id="myChart" width="400" height="400">????????/</canvas>
-      </div>
-<!------------------------업종 선택---------------------------------------->
+     
+         <br>
+</div>
+          
+            <!-------------------코로나 확진자 추이------------------------>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.0/Chart.min.js"></script>
+     <div id="corona_graph" style="margin: 0px 10% 0 0;float:right; margin-right: 150px; font-family: 'Nanum Gothic', sans-serif; font-weight: bold;">
 
+          <canvas id="myChart" width="430" height="430" style="border: 1px solid;padding:10px; font-family: 'Nanum Gothic', sans-serif; font-weight: bold;">
+          <script>
+                  console.log("{{pick.CTY_NM}}");
+                  
+        var ctx = document.getElementById("myChart");
+		var myChart = new Chart(ctx, {
+		type: 'bar',
+		data: {
+		labels: ["2020/02","2020/03","2020/04","2020/05","2020/06","2020/07","2020/08"],
+		datasets: [{
+		label: "코로나 확진자 추이",
+		data: [{{corona.CO2}}, {{corona.CO3}}, {{corona.CO4}}, {{corona.CO5}}, {{corona.CO6}}, {{corona.CO7}}, {{corona.CO8}}],
+		backgroundColor: [
+			'rgba(255, 99, 132, 0.2)',
+			'rgba(54, 162, 235, 0.2)',
+			'rgba(255, 206, 86, 0.2)',
+			'rgba(75, 192, 192, 0.2)',
+			'rgba(153, 102, 255, 0.2)',
+			'rgba(255, 159, 64, 0.2)',
+			'rgba(255, 99, 132, 0.2)'
+		],
+		borderColor: [
+			'rgba(255,99,132,1)',
+			'rgba(54, 162, 235, 1)',
+			'rgba(255, 206, 86, 1)',
+			'rgba(75, 192, 192, 1)',
+			'rgba(153, 102, 255, 1)',
+			'rgba(255, 159, 64, 1)',
+			'rgba(255,99,132,1)'
+		],
+		borderWidth: 3
+		}]
+	},
+	options: {
+		responsive: false,
+		scales: {
+		xAxes: [{
+			ticks: {
+			maxRotation: 0,
+			minRotation: 0
+			}
+		}],
+		yAxes: [{
+			ticks: {
+			beginAtZero: true
+			}
+		}]
+		},
+        legend: {
+            display: false,
+        },
+        title:{
+            display: true,
+            text:'월별 코로나 확진자 추이',
+            fontSize: 18
+        }
+	}
+	}); 
+              </script>
+          </canvas>
+        
+     </div>
+ 
+<!-- 코로나 지수 기준: 서울, 수원, 대구, 천안으로 줄세우고 12등분 -->
+ <div style="text-align:center;display:inline-block;width:100%;margin-top:20px;">
+     
+    <div style="width:55%;padding-top:10px; border: 1px solid #78d5ef; text-align:center; margin:auto;background-color:#78d5ef;">
+        <h5 style="color:black;size:20px;font-family: 'Nanum Gothic', sans-serif; font-weight: bold; font-size: 180%;">코로나 청정지표</h5>
+     </div>
+      
+    <div id="clean_pic" style="width:55%; border: 1px solid #78d5ef;margin:auto;text-align:center;display:inline-block;font-family: 'Nanum Gothic', sans-serif; font-weight: bold;">
+        {% load static %}
+      
+<script type="text/javascript" src="//cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+   <script type="text/javascript" src="//cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+<h3 id="level" style="text-align:center;border:2px solid #78d5ef;border-radius:20px;padding:5px 10px;margin:5px 35%;font-family: 'Nanum Gothic', sans-serif; font-weight: bold;">{{ chartTitle|safe }}</h3>
+	<div id="chart-1" style="text-align:center;display:inline-block;width:100%;">{{ output|safe }}
+        <script type="text/javascript">
+            FusionCharts.ready(function () {
+                
+                new FusionCharts({"type": "angulargauge", "id": "ex1", "width": "80%", "height": "270", "renderAt": "chart-1", "dataFormat": "json", "dataSource": {            "chart": {                              "lowerLimit": "0",                "upperLimit": "12",                "showValue": "1",                "numberSuffix": "등급",                "theme": "fusion",                "showToolTip": "0"            },            "colorRange": {                "color": [{                    "minValue": "0",                    "maxValue": "3",                    "code": "#62B58F"                }, {                    "minValue": "3",                    "maxValue": "6",                    "code": "#FFC533"                }, {                    "minValue": "6",                    "maxValue": "9",                    "code": "#ff8533"                }, {                    "minValue": "9",                    "maxValue": "12",                    "code": "#F2726F"                }]            },            "dials": {                "dial": [{                    "value": {{level}}                }]            }        }});FusionCharts("ex1").render();
+            });
+        </script>
+        </div>
+    <br>
+        <br>
+        <h6 style="padding:0px 30px 0px 30px; border: 0px solid #78d5ef;color:black;font-family: 'Nanum Gothic', sans-serif;">
+             <strong>* 코로나 청정지표</strong> <br>
+             : <strong>신한카드 이용 회원수 데이터</strong>(혼잡도)와 해당 지역 <strong>코로나 확진자 데이터</strong>(위험도)를 바탕으로<br> 지역별 청정도를1등급부터 12등급으로 분류한 지표입니다.
+         </h6>
+    </div>
+      
+<!------------------------업종 선택---------------------------------------->
+<br><br>
        <!--style="height: auto; width: 100%; border:1px solid #ccd9ff; border-radius: 20px;-->
-        <div class="container" style="clear: both;">
+        <div class="container" style="clear: both;margin-top:50px;">
+            <h6 style="color:black;text-align:left;font-family: 'Nanum Gothic', sans-serif; ">* 선택된 업종이 해당 지역의 <strong>취약업종</strong>인 경우 아래에 나타나는 <strong>쿠폰</strong>을 가맹점에서 사용 가능합니다.</h6> 
 			<div class="row">
 				<div class="col">
-					<h4>업종 선택</h4>
                         <ul class="nav nav-pills">
-                          <li role="presentation" class="active" onclick="javascript:food()"><a id="f" href=javascript:void(0) style="border:1px solid;border-bottom:0;padding:10px;background-color:#78d5ef"><span id="foodfont" style="font-size:1.4rem;color:black;">먹거리</span></a></li>
-                        <li role="presentation" class="active" onclick="javascript:education()"><a id="e" href=javascript:void(0) style="border:1px solid;border-bottom:0;padding:10px;"><span id="edufont" style="font-size:1.4rem">교육서비스</span></a></li>
-                           <li role="presentation" class="active" onclick="javascript:medical()"><a id="m" href=javascript:void(0) style="border:1px solid;border-bottom:0;padding:10px;"><span id="medifont" style="font-size:1.4rem">의료서비스</span></a></li>
-                            <li role="presentation" class="active" onclick="javascript:habit()"><a id="h" href=javascript:void(0) style="border:1px solid;border-bottom:0;padding:10px;"><span id="habitfont" style="font-size:1.4rem">여가활동</span></a></li>
-                             <li role="presentation" class="active" onclick="javascript:transport()"><a id="t" href=javascript:void(0) style="border:1px solid;border-bottom:0;padding:10px;"><span id="transfont" style="font-size:1.4rem">교통</span></a></li>
-                            <li role="presentation" class="active" onclick="javascript:life()"><a id="l" href=javascript:void(0) style="border:1px solid;border-bottom:0;padding:10px;"><span id="lifefont" style="font-size:1.4rem">생활서비스</span></a></li>
+                          <li role="presentation" class="active" onclick="javascript:food()"><a id="f" href="javascript:void(0)" style="border:1px solid;border-bottom:0;padding:10px;background-color:#78d5ef;"><span id="foodfont" style="font-size:1.4rem;color:black;font-family: 'Nanum Gothic', sans-serif; font-weight: bold;">요식업</span></a></li>
+                        <li role="presentation" class="active" onclick="javascript:domesome()"><a id="d" href=javascript:void(0) style="border:1px solid;border-bottom:0;padding:10px;font-family: 'Nanum Gothic', sans-serif; font-weight: bold;"><span id="domefont" style="font-size:1.4rem">도매/소매업</span></a></li>
+                           <li role="presentation" class="active" onclick="javascript:sobije()"><a id="s" href=javascript:void(0) style="border:1px solid;border-bottom:0;padding:10px;font-family: 'Nanum Gothic', sans-serif; font-weight: bold;"><span id="sobifont" style="font-size:1.4rem">소비재</span></a></li>
+                            <li role="presentation" class="active" onclick="javascript:habit()"><a id="h" href=javascript:void(0) style="border:1px solid;border-bottom:0;padding:10px;font-family: 'Nanum Gothic', sans-serif; font-weight: bold;"><span id="habitfont" style="font-size:1.4rem">여가</span></a></li>
+                             <li role="presentation" class="active" onclick="javascript:medical()"><a id="m" href=javascript:void(0) style="border:1px solid;border-bottom:0;padding:10px;font-family: 'Nanum Gothic', sans-serif; font-weight: bold;"><span id="medifont" style="font-size:1.4rem">의료서비스</span></a></li>
+                            <li role="presentation" class="active" onclick="javascript:transport()"><a id="t" href=javascript:void(0) style="border:1px solid;border-bottom:0;padding:10px;font-family: 'Nanum Gothic', sans-serif; font-weight: bold;"><span id="transfont" style="font-size:1.4rem">교통 및 자동차</span></a></li>
+                            <li role="presentation" class="active" onclick="javascript:education()"><a id="e" href=javascript:void(0) style="border:1px solid;border-bottom:0;padding:10px;font-family: 'Nanum Gothic', sans-serif; font-weight: bold;"><span id="edufont" style="font-size:1.4rem">교육서비스</span></a></li>
+                             <li role="presentation" class="active" onclick="javascript:service()"><a id="v" href=javascript:void(0) style="border:1px solid;border-bottom:0;padding:10px;font-family: 'Nanum Gothic', sans-serif; font-weight: bold;"><span id="servicefont" style="font-size:1.4rem">서비스업</span></a></li>
+                            <li role="presentation" class="active" onclick="javascript:life()"><a id="l" href=javascript:void(0) style="border:1px solid;border-bottom:0;padding:10px;font-family: 'Nanum Gothic', sans-serif; font-weight: bold;"><span id="lifefont" style="font-size:1.4rem">생활서비스</span></a></li>
+                          <!--  <li role="presentation" class="active" onclick="javascript:jungbo()"><a id="j" href=javascript:void(0) style="border:1px solid;border-bottom:0;padding:8px;"><span id="jungbofont" style="font-size:1.4rem">정보통신업</span></a></li>
+                            <li role="presentation" class="active" onclick="javascript:unsong()"><a id="u" href=javascript:void(0) style="border:1px solid;border-bottom:0;padding:10px;"><span id="unsongfont" style="font-size:1.4rem">운송/유통업</span></a></li>
+                            <li role="presentation" class="active" onclick="javascript:gita()"><a id="g" href=javascript:void(0) style="border:1px solid;border-bottom:0;padding:10px;"><span id="gitafont" style="font-size:1.4rem">기타</span></a></li>-->
         </ul>
                 
         <!--세부 업종-->
             <div class="container" style="border:1px solid;color:#78d5ef">
                 <br>
-                    <form name="upjongform2">
-       <!--                 <div class="input-group-prepend" style="overflow:auto">-->
+                    <form name="upjongform2" style="font-family: 'Nanum Gothic', sans-serif; font-weight: bold; font-weight: bold;">
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <div id="food">
+                        <!--요식업-->
+                        <div  class="sel" id="food" >
                             <label class="btn btn-primary">
-							<input type="radio" name="up" value="음식점" onchange="javascript:upjongVal()"> 음식점
+							<input type="radio" name="up" value="음식점" onchange="javascript:upjongVal(); canUpjong(this);">음식점
 						</label>
                         <label class="btn btn-primary">
-							<input type="radio" name="up" value="카페" onchange="javascript:upjongVal()"> 카페
+							<input type="radio" name="up" value="패스트푸드" onchange="javascript:upjongVal(); canUpjong(this);"> 패스트푸드
 						</label>
 						<label class="btn btn-primary">
-							<input type="radio" name="up" value="대형마트" onchange="javascript:upjongVal()"> 대형마트
+							<input type="radio" name="up" value="카페" onchange="javascript:upjongVal(); canUpjong(this);"> 카페
 						</label>
                             <br>
 						<label class="btn btn-primary">
-							<input type="radio" name="up" value="편의점" onchange="javascript:upjongVal()"> 편의점
+							<input type="radio" name="up" value="제과점" onchange="javascript:upjongVal(); canUpjong(this);"> 제과점
+						</label>
+                        <label class="btn btn-primary">
+							<input type="radio" name="up" value="식품" onchange="javascript:upjongVal(); canUpjong(this);"> 식품
 						</label>
                         </div>
-                        
-                        <div id="school" style="display:none">
+                        <!--도매 소매업-->
+                        <div class="sel" id="dome" style="display:none" >
                             <label class="btn btn-primary" >
-							<input type="radio" name="up" value="어린이집/유치원" onchange="javascript:upjongVal()"> 어린이집/유치원
+							<input type="radio" name="up" value="마트" onchange="javascript:upjongVal(); canUpjong(this);"> 마트
 						</label>
                         <label class="btn btn-primary" >
-							<input type="radio" name="up" value="학교" onchange="javascript:upjongVal()"> 학교
+							<input type="radio" name="up" value="정육점" onchange="javascript:upjongVal(); canUpjong(this);"> 정육점
 						</label>
                         <label class="btn btn-primary">
-							<input type="radio" name="up" value="학원" onchange="javascript:upjongVal()"> 학원
+							<input type="radio" name="up" value="인삼" onchange="javascript:upjongVal(); canUpjong(this);"> 건강제품
 						</label>
-                        </div>
-						
-                        <div id="medical" style="display:none">
+                        <label class="btn btn-primary">
+							<input type="radio" name="up" value="식품" onchange="javascript:upjongVal(); canUpjong(this);"> 식품
+						</label>
+                        <label class="btn btn-primary">
+							<input type="radio" name="up" value="패션" onchange="javascript:upjongVal(); canUpjong(this);"> 패션
+						</label>
                              <label class="btn btn-primary">
-							    <input type="radio" name="up" value="병원" onchange="javascript:upjongVal()"> 병원
-						    </label>
+							<input type="radio" name="up" value="뷰티" onchange="javascript:upjongVal(); canUpjong(this);"> 뷰티
+						</label>
+                             <label class="btn btn-primary">
+							<input type="radio" name="up" value="안경,콘텍트렌즈" onchange="javascript:upjongVal(); canUpjong(this);"> 안경,콘텍트렌즈
+						</label>
+                             <label class="btn btn-primary">
+							<input type="radio" name="up" value="수족관" onchange="javascript:upjongVal(); canUpjong(this);"> 수족관
+						</label>
+                        <label class="btn btn-primary">
+							<input type="radio" name="up" value="복지매장" onchange="javascript:upjongVal(); canUpjong(this);"> 복지매장
+						</label>
+                         <label class="btn btn-primary">
+							<input type="radio" name="up" value="가전" onchange="javascript:upjongVal(); canUpjong(this);"> 가전
+						</label>
+                        <label class="btn btn-primary">
+							<input type="radio" name="up" value="쇼핑센터" onchange="javascript:upjongVal(); canUpjong(this);"> 쇼핑센터
+						</label>
+                         <label class="btn btn-primary">
+							<input type="radio" name="up" value="백화점" onchange="javascript:upjongVal(); canUpjong(this);"> 백화점
+						</label>    
+                        </div>    
+                            
+                        <!--소비재-->
+                        <div class="sel" id="sobii" style="display:none;">
+                        <label class="btn btn-primary">
+							<input type="radio" name="up" value="문구" onchange="javascript:upjongVal(); canUpjong(this);"> 문구
+						</label>
+                        <label class="btn btn-primary">
+							<input type="radio" name="up" value="서점" onchange="javascript:upjongVal(); canUpjong(this);"> 서점
+						</label>
+                        <label class="btn btn-primary">
+							<input type="radio" name="up" value="잡화" onchange="javascript:upjongVal(); canUpjong(this);"> 잡화
+						</label>
+                        <label class="btn btn-primary">
+							<input type="radio" name="up" value="악기" onchange="javascript:upjongVal(); canUpjong(this);"> 악기
+						</label>
+                        <label class="btn btn-primary" >
+							<input type="radio" name="up" value="귀금속" onchange="javascript:upjongVal(); canUpjong(this);"> 귀금속, 금, 은, 보석
+						</label>
+                        <label class="btn btn-primary" >
+							<input type="radio" name="up" value="골동품" onchange="javascript:upjongVal(); canUpjong(this);"> 골동품, 예술품
+						</label>
+                        </div>   
+                            
+                       <!--여가-->
+                        <div class="sel" id="habit" style="display:none">
                             <label class="btn btn-primary">
-							    <input type="radio" name="up" value="약국" onchange="javascript:upjongVal()"> 약국
-						    </label>
-                        </div>
-                        <div id="habit" style="display:none">
-                            <label class="btn btn-primary">
-							<input type="radio" name="up" value="문화시설" onchange="javascript:upjongVal()"> 문화시설
+							<input type="radio" name="up" value="레저스포츠" onchange="javascript:upjongVal(); canUpjong(this);"> 레저스포츠
 						</label>
                             <label class="btn btn-primary">
-							<input type="radio" name="up" value="관광명소" onchange="javascript:upjongVal()"> 관광명소
+							<input type="radio" name="up" value="스키장" onchange="javascript:upjongVal(); canUpjong(this);"> 스키장
 						</label>
 						<label class="btn btn-primary">
-							<input type="radio" name="up" value="숙박" onchange="javascript:upjongVal()"> 숙박
+							<input type="radio" name="up" value="숙박" onchange="javascript:upjongVal(); canUpjong(this);"> 숙박
+						</label>
+                        <label class="btn btn-primary">
+							<input type="radio" name="up" value="놀이동산" onchange="javascript:upjongVal(); canUpjong(this);"> 놀이동산
+						</label>
+                        <label class="btn btn-primary">
+							<input type="radio" name="up" value="테니스장" onchange="javascript:upjongVal(); canUpjong(this);"> 테니스장
+						</label>
+                        <label class="btn btn-primary">
+							<input type="radio" name="up" value="여행사" onchange="javascript:upjongVal(); canUpjong(this);"> 여행사
+						</label>
+                        <label class="btn btn-primary">
+							<input type="radio" name="up" value="면세점" onchange="javascript:upjongVal(); canUpjong(this);"> 면세점
+						</label>
+                        <label class="btn btn-primary">
+							<input type="radio" name="up" value="아쿠아리움" onchange="javascript:upjongVal(); canUpjong(this);"> 아쿠아리움
 						</label>
                         </div>
-                            
-                        <div id="transportation" style="display:none">
-                            <label class="btn btn-primary">
-							    <input type="radio" name="up" value="주차장" onchange="javascript:upjongVal()"> 주차장
+                        
+                        <!--의료서비스-->
+                         <div class="sel" id="medical" style="display:none">
+                             <label class="btn btn-primary">
+							    <input type="radio" name="up" value="병원" onchange="javascript:upjongVal(); canUpjong(this);"> 병원
 						    </label>
                             <label class="btn btn-primary">
-							    <input type="radio" name="up" value="주유소/충전소" onchange="javascript:upjongVal()"> 주유소/충전소
+							    <input type="radio" name="up" value="약국" onchange="javascript:upjongVal(); canUpjong(this);"> 약국
 						    </label>
-						    <label class="btn btn-primary">
-							    <input type="radio" name="up" value="지하철역" onchange="javascript:upjongVal()"> 지하철역
+                            <label class="btn btn-primary">
+							    <input type="radio" name="up" value="한의원" onchange="javascript:upjongVal(); canUpjong(this);"> 한의원
+						    </label>
+                            <label class="btn btn-primary">
+							    <input type="radio" name="up" value="보건소" onchange="javascript:upjongVal(); canUpjong(this);"> 보건소
+						    </label>
+                            <label class="btn btn-primary">
+							    <input type="radio" name="up" value="동물병원" onchange="javascript:upjongVal(); canUpjong(this);"> 동물병원
 						    </label>
                         </div>
                         
-                        <div id="life" style="display:none">
+                        <!--교통 및 자동차-->    
+                        <div class="sel" id="transportation" style="display:none">
+                            <label class="btn btn-primary">
+							    <input type="radio" name="up" value="지하철역" onchange="javascript:upjongVal(); canUpjong(this);"> 지하철역
+						    </label>
+                            <label class="btn btn-primary">
+							    <input type="radio" name="up" value="주차장" onchange="javascript:upjongVal(); canUpjong(this);"> 주차장
+						    </label>
+                            <label class="btn btn-primary">
+							    <input type="radio" name="up" value="주유소" onchange="javascript:upjongVal(); canUpjong(this);"> 주유소
+						    </label>
+						    <label class="btn btn-primary">
+							    <input type="radio" name="up" value="자동차 정비" onchange="javascript:upjongVal(); canUpjong(this);"> 자동차 정비
+						    </label>
+                            <label class="btn btn-primary">
+							    <input type="radio" name="up" value="세차장" onchange="javascript:upjongVal(); canUpjong(this);"> 세차장
+						    </label>
+                            <label class="btn btn-primary">
+							    <input type="radio" name="up" value="차량부품" onchange="javascript:upjongVal(); canUpjong(this);"> 차량부품
+						    </label>
+                            <label class="btn btn-primary">
+							    <input type="radio" name="up" value="렌트카" onchange="javascript:upjongVal(); canUpjong(this);"> 렌트카
+						    </label>
+                            <label class="btn btn-primary">
+							    <input type="radio" name="up" value="중고차" onchange="javascript:upjongVal(); canUpjong(this);"> 중고차
+						    </label>
+                            <label class="btn btn-primary">
+							    <input type="radio" name="up" value="차량판매" onchange="javascript:upjongVal(); canUpjong(this);"> 차량판매
+						    </label>
+                            <label class="btn btn-primary">
+							    <input type="radio" name="up" value="오토바이" onchange="javascript:upjongVal(); canUpjong(this);"> 오토바이
+						    </label>
+                        </div>
+                        
+                        <!--교육-->
+                        <div class="sel" id="school" style="display:none;">
+                            <label class="btn btn-primary" >
+							<input type="radio" name="up" value="독서실" onchange="javascript:upjongVal(); canUpjong(this);"> 독서실
+						</label>
+                        <label class="btn btn-primary" >
+							<input type="radio" name="up" value="학습지" onchange="javascript:upjongVal(); canUpjong(this);"> 학습지
+						</label>
                         <label class="btn btn-primary">
-							<input type="radio" name="up" value="은행" onchange="javascript:upjongVal()"> 은행
+							<input type="radio" name="up" value="학원" onchange="javascript:upjongVal(); canUpjong(this);"> 학원
+						</label>
+                        </div>
+						
+                        <!--서비스업-->
+                        <div class="sel" id="serviceup" style="display:none">
+                        <label class="btn btn-primary">
+							<input type="radio" name="up" value="광고" onchange="javascript:upjongVal(); canUpjong(this);"> 광고
 						</label>
 						
                         <label class="btn btn-primary">
-							<input type="radio" name="up" value="중개업소" onchange="javascript:upjongVal()"> 중개업소
+							<input type="radio" name="up" value="예식" onchange="javascript:upjongVal(); canUpjong(this);"> 예식업
 						</label>
                         <label class="btn btn-primary">
-							<input type="radio" name="up" value="공공기관" onchange="javascript:upjongVal()"> 공공기관
-                            </label>
+							<input type="radio" name="up" value="상품권" onchange="javascript:upjongVal(); canUpjong(this);"> 상품권
+                        </label>
+                         <label class="btn btn-primary">
+							<input type="radio" name="up" value="이벤트" onchange="javascript:upjongVal(); canUpjong(this);"> 이벤트
+                        </label>
                          </div>
-                        
-                     
+                   
+                        <!--생활서비스-->
+                        <div class="sel" id="life" style="display:none">
+                        <label class="btn btn-primary">
+							<input type="radio" name="up" value="세탁소" onchange="javascript:upjongVal(); canUpjong(this);"> 세탁소
+						</label>
+						
+                        <label class="btn btn-primary">
+							<input type="radio" name="up" value="부동산" onchange="javascript:upjongVal(); canUpjong(this);"> 부동산
+						</label>
+                        <label class="btn btn-primary">
+							<input type="radio" name="up" value="보험" onchange="javascript:upjongVal(); canUpjong(this);"> 보험
+                        </label>
+                         <label class="btn btn-primary">
+							<input type="radio" name="up" value="인테리어" onchange="javascript:upjongVal(); canUpjong(this);"> 인테리어
+                        </label>
+                        <label class="btn btn-primary">
+							<input type="radio" name="up" value="통신" onchange="javascript:upjongVal(); canUpjong(this);"> 통신
+						</label>
+                        <label class="btn btn-primary">
+							<input type="radio" name="up" value="소프트웨어" onchange="javascript:upjongVal(); canUpjong(this);"> 소프트웨어
+						</label>
+                         </div>
+                            
+                        <!--정보통신업-->
+                        <div class="sel" id="jungbo" style="display:none">
+                        <label class="btn btn-primary">
+							<input type="radio" name="up" value="통신" onchange="javascript:upjongVal(); canUpjong(this);"> 통신
+						</label>
+						
+                        <label class="btn btn-primary">
+							<input type="radio" name="up" value="소프트웨어" onchange="javascript:upjongVal(); canUpjong(this);"> 소프트웨어
+						</label>
+                         </div>
+                            
+                        <!--운송,유통업-->
+                        <div class="sel" id="unsong" style="display:none">
+                        <label class="btn btn-primary">
+							<input type="radio" name="up" value="유통" onchange="javascript:upjongVal(); canUpjong(this);"> 유통
+						</label>
+						
+                        <label class="btn btn-primary">
+							<input type="radio" name="up" value="화물" onchange="javascript:upjongVal(); canUpjong(this);"> 화물
+						</label>
+                         </div>
+                            
+                        <!--기타-->
+                        <div class="sel" id="gita" style="display:none">
+                        <label class="btn btn-primary">
+							<input type="radio" name="up" value="LPG가스" onchange="javascript:upjongVal(); canUpjong(this);"> LPG가스
+						</label>
+						
+                        <label class="btn btn-primary">
+							<input type="radio" name="up" value="제조" onchange="javascript:upjongVal(); canUpjong(this);"> 제조
+						</label>
+                         </div>
 			</div>
-                  
+                
                 
                     <br><br>
                     <div>
 					</div>
-                        <h4 id="checkup"></h4>
+                        
 
                     </form>
                   </div>
                 </div>
 			</div>
       </div>
+     <script type="text/javascript">
+         function canUpjong(obj) {
+             var count=0;
+             console.log(obj.value);
+             {% for up in upjong_pick.all %}
+             console.log("{{up.WEAK_UPJONG}}")
+             if (obj.value=="{{up.WEAK_UPJONG}}")
+                 {
+                     document.getElementById("coupon").style.display="block";
+                     document.getElementById("coupon_hash").innerHTML = "#쿠폰 사용 가능 업종";
+                     console.log("yess");    //넹넹 아아 아 글쿠낭 네!!!
+                     count+=1;
+                     //break; break 때문인가봐요! 오옹 그러네요!! 오 이제 되네요 쿠폰 없어지는거 빼구ㅋㅋㅋ 됐당!!! 드디어 끝냈어요 아 아니다 ㅋㅋㅋㅋ 쿠폰만 다시생기게하면 끝일거같아요!!
+                 }
+             {% endfor %}
+             if (count==0) {
+                 document.getElementById("coupon").style.display="none";
+                 document.getElementById("coupon_hash").innerHTML = "#쿠폰 사용 불가 업종";
+             }
+         }
+     </script>
       
-      <br><br><br><br>
+      <br><br><br>
+     
+     <!-----------업종 디비에서 가져오기 확인------------
+     <input type="text" id="can_upjong" value="as">-->
+     <script type="text/javascript">
+         //var a=document.getElementById("can_upjong").value;
+         //console.log(document.getElementById("can_upjong").value);
+
+         //var selected = $(input).value;
+
+        //var inputVal = "";
+        //if (selected != null) {
+            //inputVal = selected.value;
+        //}
+         //if (selected != null) {
+         //   str = selected.value;
+         //}
+         //console.log(selected);
+         
+         //{% for up in upjong_pick.all %}
+         //console.log("{{up.WEAK_UPJONG}}")
+         //{% if up.WEAK_UPJONG == inputVal %}
+         //console.log("hello");
+         //{% endif %}
+         //{% endfor %}
+         
+         
+         
+     </script>
+     
+     
      <!---------- 쿠폰 상세 설명 ---------->
-      <div class="container">
-          <h3>
-              쿠폰 상세 설명
-          </h3>
+     <div class="container" >
+           
+          
     </div>
-        <div class="container">
-      <div class="row">
-        <div class="col-8">
+    <div class="container" >
+      <div class="row" id="coupon" style="width:100%;">
+        <div class="col-10" style="float: left;font-family: 'Nanum Gothic', sans-serif; font-weight: bold; font-size: 150%">
           <div class="card text-white bg-primary">
             <div class="card-header">
               쿠폰
             </div>
             <div class="card-body">
-              <h5 class="card-title">10% 할인</h5>
+              <h4 class="card-title">10% 할인</h4>
               <p class="card-text">사용 기한: 2020년 9월 ~ 2020년 12월</p>
             </div>
           </div>
         </div>
-        <div class="col-4">
-          <div class="card text-white bg-success">
-            <div class="card-header">
-              My Card
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Lorem</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectet</p>
-            </div>
+          
+          <div style="border: 1px solid #78d5ef; width: 175px;height:200px;padding:10px;postion: absolute;color:black;display:inline-block;">
+            <p style="text-align: center; word-break:break-all;font-family: 'Nanum Gothic', sans-serif; font-weight: bold;">
+                <strong>* 쿠폰 유의 사항</strong>
+              </p>
+              <p style="text-align: left;font-family: 'Nanum Gothic', sans-serif; font-weight: bold;">
+                  가맹점 별로 쿠폰 사용이 가능한 항목이 상이할 수 있습니다.
+              </p>
           </div>
-        </div>
-          <!--
-        <div class="col-4">
-          <div class="card text-white bg-dark">
-            <div class="card-header">
-              My Card
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Lorem</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam egestas sed sem ut malesuada.</p>
-            </div>
-          </div>
-        </div>-->
       </div>
-    <br>
+    <br> 
+            
+    <!--해시태그-->
+     <div style="text-align:left;font-family: 'Nanum Gothic', sans-serif; font-weight: bold;">
+         <h5 id="cty_nm" style="text-align:center;border: 2px solid #78d5ef;border-radius:20px;padding:5px 10px;float:left;margin:5px;">#{{areaname}}</h5>
+         <h5 id="checkup" style="border: 2px solid #78d5ef;border-radius:20px;padding:5px 10px;float:left;margin:5px;"></h5>
+         <h5 id="coupon_hash" style="border: 2px solid #78d5ef;border-radius:20px;padding:5px 10px;float:left;margin:5px;">#쿠폰 사용 가능 유무</h5>
+     </div>
+            
     <form method="POST" onsubmit="searchPlaces(); return false;">
         {% csrf_token %}
-        <button type="submit" id="search_location"  class="btn btn-primary btn-lg" style="position:absolute;margin-left:10px;">가맹점 확인하기</button>
+        <!--이전 버튼
+        <button type="submit" id="search_location"  class="btn btn-primary btn-lg" style="position:absolute;margin-left:10px;">가맹점 확인하기</button>-->
+        <button type="submit" id="search_location"  class="btn btn-primary btn-lg" style="float:right;margin-left:10px;font-family: 'Nanum Gothic', sans-serif; font-weight: bold;">가맹점 확인하기</button>
      </form>
     </div>
-      
+     
+
    
      <br><br>
       <!---------- 지도 api ------------>
-  <!--
-     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b1dac224f5fb01384ad1a5898771974c"></script>
-     services 라이브러리 불러오기 -->
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b1dac224f5fb01384ad1a5898771974c&libraries=services,clusterer,drawing"></script>  
       <div class="map_wrap">
         <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
 
     <div id="menu_wrap" class="bg_white">
-        <!--
-        <div class="option">
-            <div>
-                
-                    {% csrf_token %}
-                    키워드 : <input type="text" id="keyword" size="15"> 
-                    <button type="submit">검색하기</button> 
-             
-            </div>
-        </div>
-        <hr>-->
+
         <ul id="placesList"></ul>
         <div id="pagination"></div>
     </div>
@@ -351,10 +635,11 @@
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
       <footer>
   Copyright &copy;
-    <script>document.write(new Date().getFullYear());</script> All rights reserved | 신한카드조 <a href="https://colorlib.com" target="_blank"></a>
+    <script>document.write(new Date().getFullYear());</script> All rights reserved | SWAG <a href="https://colorlib.com" target="_blank"></a>
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. </p>-->
     </footer>
-      
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.0/Chart.min.js"></script>
+  <script src="/static/js/drawgraph.js"></script>
   <script src="/static/js/kakaomap.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -378,7 +663,7 @@
 
   <script src="/static/js/main.js"></script>
   <script src="/static/js/upjong.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.0/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.0/Chart.min.js"></script>
     
   </body>
 </html>

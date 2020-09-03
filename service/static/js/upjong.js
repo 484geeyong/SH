@@ -17,8 +17,11 @@ function upjongVal() {
                             
                             var area=document.getElementById("checkup").innerHTML;
                             
-                            document.getElementById("checkup").innerHTML=checkup.value;
+                            var vvv = "#" + checkup.value;
+                            document.getElementById("checkup").innerHTML = vvv;
                             console.log(checkup.value);
+                            
+                            //document.getElementById("can_upjong").value=vvv;
                             
                             var upjong1="";
                             if (checkup.value=="대형마트")
@@ -27,12 +30,12 @@ function upjongVal() {
                                 upjong1=pyeon;
                             
     
-                            target.innerHTML="";
-	                        for (x in upjong1) {
-                                var opt = document.createElement("temp");
-                                opt.innerHTML = "<input type=radio name=up2 value="+upjong1[x]+" >"+upjong1[x];
-                                target.appendChild(opt);
-                            }
+                            //target.innerHTML="";
+	                        //for (x in upjong1) {
+                            //    var opt = document.createElement("temp");
+                            //    opt.innerHTML = "<input type=radio name=up2 value="+upjong1[x]+" >"+upjong1[x];
+                            //    target.appendChild(opt);
+                            //}
                         }
                 }
         }
@@ -95,86 +98,98 @@ function check2(form) {
         }
     }
 }
-
+//요식업
 function food(){
-    document.getElementById("food").style.display="block";
-    document.getElementById("school").style.display="none"; 
-    document.getElementById("medical").style.display="none";
-    document.getElementById("habit").style.display="none";
-    document.getElementById("transportation").style.display="none";
-    document.getElementById("life").style.display="none";
-    
+    $('div.sel#food').css( 'display', 'block');
+    $('div.sel:not(#food)').css('display','none');
+
     $('a').not('a#f').css( 'background-color', 'transparent');
     $('span').not('#foodfont').css( 'color', '#78d5ef');
     $('a#f').css( 'background-color', '#78d5ef');
     $('span#foodfont').css( 'color', 'black');
 }
+//도매소매
+function domesome(){
+    $('div.sel#dome').css( 'display', 'block');
+    $('div.sel:not(#dome)').css('display','none');
 
-function education(){
-    //alert("교육");
-    document.getElementById("food").style.display="none";
-    document.getElementById("school").style.display="block"; 
-    document.getElementById("medical").style.display="none";
-    document.getElementById("habit").style.display="none";
-    document.getElementById("transportation").style.display="none";
-    document.getElementById("life").style.display="none";
-    $('a').not('a#e').css( 'background-color', 'transparent');
-    $('span').not('#edufont').css( 'color', '#78d5ef');
-    $('a#e').css( 'background-color', '#78d5ef');
-    $('span#edufont').css( 'color', 'black');
+    $('a').not('a#d').css( 'background-color', 'transparent');
+    $('span').not('#domefont').css( 'color', '#78d5ef');
+    $('a#d').css( 'background-color', '#78d5ef');
+    $('span#domefont').css( 'color', 'black');
 }
-function medical(){
-    //alert("병원");
-    document.getElementById("food").style.display="none";
-    document.getElementById("school").style.display="none"; 
-    document.getElementById("medical").style.display="block";
-    document.getElementById("habit").style.display="none";
-    document.getElementById("transportation").style.display="none";
-    document.getElementById("life").style.display="none";
-    document.getElementById("edufont","foodfont").style.color="#78d5ef";
-    document.getElementById("medifont").style.color="#1e90ff";
-    $('a').not('a#m').css( 'background-color', 'transparent');
-    $('span').not('#medifont').css( 'color', '#78d5ef');
-    $('a#m').css( 'background-color', '#78d5ef');
-    $('span#medifont').css( 'color', 'black');
+//소비재
+function sobije(){
+    $('div.sel#sobii').css( 'display', 'block');
+    $('div.sel:not(#sobii)').css('display','none');
+
+    $('a').not('a#s').css( 'background-color', 'transparent');
+    $('span').not('#sobifont').css( 'color', '#78d5ef');
+    $('a#s').css( 'background-color', '#78d5ef');
+    $('span#sobifont').css( 'color', 'black');
 }
+//여가
 function habit(){
-    document.getElementById("food").style.display="none";
-    document.getElementById("school").style.display="none"; 
-    document.getElementById("medical").style.display="none";
-    document.getElementById("habit").style.display="block";
-    document.getElementById("transportation").style.display="none";
-    document.getElementById("life").style.display="none";
+    $('div.sel#habit').css( 'display', 'block');
+    $('div.sel:not(#habit)').css('display','none');
     
     $('a').not('a#h').css( 'background-color', 'transparent');
     $('span').not('#habitfont').css( 'color', '#78d5ef');
     $('a#h').css( 'background-color', '#78d5ef');
     $('span#habitfont').css( 'color', 'black');
 }
-function transport(){
-    //alert("교통");
-    document.getElementById("food").style.display="none";
-    document.getElementById("school").style.display="none"; 
-    document.getElementById("medical").style.display="none";
-    document.getElementById("habit").style.display="none";
-    document.getElementById("transportation").style.display="block";
-    document.getElementById("life").style.display="none";
+//의료서비스
+function medical(){
+    $('div.sel#medical').css( 'display', 'block');
+    $('div.sel:not(#medical)').css('display','none');
     
-    $('a').not('a#t').css( 'background-color', 'transparent');
-    $('span').not('#transfont').css( 'color', '#78d5ef');
-    $('a#t').css( 'background-color', '#78d5ef');
-    $('span#transfont').css( 'color', 'black');
+    $('a').not('a#m').css( 'background-color', 'transparent');
+    $('span').not('#medifont').css( 'color', '#78d5ef');
+    $('a#m').css( 'background-color', '#78d5ef');
+    $('span#medifont').css( 'color', 'black');
 }
+//교육서비스
+function education(){
+    $('div.sel#school').css( 'display', 'block');
+    $('div.sel:not(#school)').css('display','none');
+    
+    $('a').not('a#e').css( 'background-color', 'transparent');
+    $('span').not('#edufont').css( 'color', '#78d5ef');
+    $('a#e').css( 'background-color', '#78d5ef');
+    $('span#edufont').css( 'color', 'black');
+}
+//서비스업
+function service(){
+    $('div.sel#serviceup').css( 'display', 'block');
+    $('div.sel:not(#serviceup)').css('display','none');
+    
+    $('a').not('a#v').css( 'background-color', 'transparent');
+    $('span').not('#servicefont').css( 'color', '#78d5ef');
+    $('a#v').css( 'background-color', '#78d5ef');
+    $('span#servicefont').css( 'color', 'black');
+}
+//생활서비스
 function life(){
-    document.getElementById("food").style.display="none";
-    document.getElementById("school").style.display="none"; 
-    document.getElementById("medical").style.display="none";
-    document.getElementById("habit").style.display="none";
-    document.getElementById("transportation").style.display="none";
-    document.getElementById("life").style.display="block";
+    $('div.sel#life').css( 'display', 'block');
+    $('div.sel:not(#life)').css('display','none');
     
     $('a').not('a#l').css( 'background-color', 'transparent');
     $('span').not('#lifefont').css( 'color', '#78d5ef');
     $('a#l').css( 'background-color', '#78d5ef');
     $('span#lifefont').css( 'color', 'black');
+}
+function transport(){
+    // document.getElementById("food").style.display="none";
+    // document.getElementById("school").style.display="none"; 
+    // document.getElementById("medical").style.display="none";
+    // document.getElementById("habit").style.display="none";
+    // document.getElementById("transportation").style.display="block";
+    // document.getElementById("life").style.display="none";
+    $('div.sel#transportation').css( 'display', 'block');
+    $('div.sel:not(#transportation)').css('display','none');
+    
+    $('a').not('a#t').css( 'background-color', 'transparent');
+    $('span').not('#transfont').css( 'color', '#78d5ef');
+    $('a#t').css( 'background-color', '#78d5ef');
+    $('span#transfont').css( 'color', 'black');
 }
